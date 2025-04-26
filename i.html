@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Portfolio</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            background-color: rgb(0, 0, 59);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Particle Background */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: transparent;
+            top: 0;
+            left: 0;
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            padding: 0 5%;
+            background-color: rgba(103, 116, 43, 0.244);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .left {
+            font-size: 1.5rem;
+        }
+
+        .right ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .right ul li {
+            margin: 0 15px;
+        }
+
+        .right ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .right ul li a:hover {
+            color: aqua;
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        /* First Section */
+        .first {
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: center;
+            align-items: center;
+            margin: 80px 0;
+            padding: 0 5%;
+            text-align: center;
+        }
+
+        .first>div {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .leftSection {
+            font-size: 2rem;
+        }
+
+        .rightSection img {
+            width: 70%;
+            max-width: 300px;
+            margin: 20px 0;
+        }
+
+        .purple {
+            color: blueviolet;
+        }
+
+        #element {
+            color: blueviolet;
+            display: block;
+            margin: 10px 0;
+        }
+
+        main hr {
+            border: 0;
+            height: 1.2px;
+            margin: 40px 10%;
+            background-color: cadetblue;
+        }
+
+        /* Skills Section */
+        .second {
+            max-width: 90vw;
+            margin: auto;
+            margin-top: 5vh;
+            font-size: 1.5rem;
+            height: auto;
+            padding: 0 5%;
+        }
+
+        .second h1 {
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .lan {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .lan img {
+            height: 80px;
+            width: 80px;
+            border-radius: 10%;
+            transition: transform 0.3s;
+            object-fit: contain;
+        }
+
+        .lan img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Achievement Section */
+        .third {
+            margin: 60px 5%;
+            font-size: 1.5rem;
+        }
+
+        .third h1 {
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .third ul {
+            padding-left: 20px;
+        }
+
+        .third li {
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        /* Social Links Section */
+        .four {
+            max-width: 90vw;
+            margin: 40px auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .four img {
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            border: 3px solid black;
+            transition: transform 0.3s;
+        }
+
+        .four img:hover {
+            transform: scale(1.1);
+        }
+
+        .end {
+            height: 10vh;
+        }
+
+        /* Footer */
+        footer {
+            background-color: rgba(103, 116, 43, 0.244);
+            padding: 30px 20px;
+            color: white;
+            text-align: center;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .footer-links {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #ffea00;
+        }
+
+        .social-icons {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2);
+            color: #ffea00;
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 40px 20px;
+            background: #0e0e40;
+            color: white;
+            text-align: center;
+        }
+
+        .projects h1 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #ffea00;
+        }
+
+        .project-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 300px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            margin-bottom: 20px;
+        }
+
+        .project-card img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .project-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+
+        .project-card p {
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+            color: #ccc;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 6px 15px;
+            background: #4b0082;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #ff6f91;
+        }
+
+        .resume-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 8px 20px;
+            background-color: #4b0082;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+        
+        .resume-btn:hover {
+            background-color: #ff6f91;
+        }
+
+        /* Media Queries */
+        @media (min-width: 768px) {
+            .first {
+                flex-direction: row;
+                text-align: left;
+                margin: 120px 0;
+            }
+            
+            .first>div {
+                width: 45%;
+                margin-bottom: 0;
+            }
+            
+            .leftSection {
+                font-size: 2.5rem;
+            }
+            
+            .rightSection img {
+                width: 80%;
+                max-width: 400px;
+            }
+            
+            .lan img {
+                height: 100px;
+                width: 100px;
+            }
+            
+            .four img {
+                height: 80px;
+                width: 80px;
+            }
+            
+            .projects h1 {
+                font-size: 2.5rem;
+            }
+            
+            .project-card {
+                padding: 20px;
+            }
+            
+            .project-card h3 {
+                font-size: 1.5rem;
+            }
+            
+            .project-card p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .first {
+                margin: 140px 0;
+            }
+            
+            .leftSection {
+                font-size: 3rem;
+            }
+            
+            .lan img {
+                height: 120px;
+                width: 120px;
+            }
+            
+            .four img {
+                height: 100px;
+                width: 100px;
+            }
+            
+            .projects h1 {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .right ul {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: rgba(0, 0, 59, 0.9);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: left 0.3s ease;
+            }
+            
+            .right ul.active {
+                left: 0;
+            }
+            
+            .right ul li {
+                margin: 20px 0;
+            }
+            
+            .right ul li a {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Particles.js container -->
+    <div id="particles-js"></div>
+
+    <nav>
+        <div class="left">Aditya Portfolio</div>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="right">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="home">
+        <section class="first">
+            <div class="leftSection">
+                Hi, My Name is <span class="purple">Aditya</span>
+                <div>I am a Software Developer</div>
+                <span id="element"></span>
+                <a href="RenderCV_sb2nov_Theme.pdf.pdf" download class="resume-btn">Download Resume</a>
+            </div>
+            <div class="rightSection">
+                <img src="bg.png" alt="Profile Picture">
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="second" id="skills">
+            <h1>Technical Skills</h1>
+            <div class="lan">
+                <img src="c++.jpg" alt="C++">
+                <img src="c.jpg" alt="C">
+                <img src="html.jpg" alt="HTML">
+                <img src="css.jpg" alt="CSS">
+                <img src="js.jpg" alt="JavaScript">
+                <img src="react.jpg" alt="React">
+                <img src="tailwind css.jpg" alt="Tailwind CSS">
+                <img src="git.jpg" alt="Git">
+                <img src="mongo.jpg" alt="MongoDB">
+                <img src="sql.jpg" alt="SQL">
+                <img src="python.jpg" alt="Python">
+                <img src="java.jpg" alt="Java">
+            </div>
+        </section>
+
+        <section class="third">
+            <h1>Achievements & Certifications</h1>
+            <ul>
+                <li>Completed JavaScript Course (Infosys Springboard)</li>
+                <li>AWS Academy Graduate - AWS Academy Cloud Foundations</li>
+                <li>Certification in DSA with C++ (Infosys Springboard)</li>
+                <li>Solved 300+ DSA problems</li>
+            </ul>
+        </section>
+
+        <section class="projects" id="projects">
+            <h1>My Projects</h1>
+            <div class="project-list">
+                <div class="project-card">
+                    <img src="chatapp.png" alt="Real-Time Chat App">
+                    <h3>Real-Time Chat App</h3>
+                    <p>Built with React and Firebase for real-time messaging and auth system.</p>
+                    <a href="https://github.com/Aditya28032004/RealTimeChatApp" target="_blank" class="btn">View Project</a>
+                </div>
+                <div class="project-card">
+                    <img src="moneytracker.png" alt="Money Tracker">
+                    <h3>Money Tracker</h3>
+                    <p>Built with HTML, CSS, JavaScript to manage expenses easily.</p>
+                    <a href="https://github.com/Aditya28032004/MoneyTracker" target="_blank" class="btn">View Project</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="four" id="contact">
+            <a href="https://leetcode.com/u/Adityapratapsingh00/"><img src="leetcode.jpg" alt="LeetCode"></a>
+            <a href="https://github.com/Aditya28032004"><img src="github.jpg" alt="GitHub"></a>
+            <a href="https://www.geeksforgeeks.org/user/shubhamswixs/"><img src="gfg.jpg" alt="GeeksforGeeks"></a>
+        </section>
+
+        <div class="end"></div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">Aditya Pratap Singh</div>
+
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <div class="social-icons">
+                <a href="https://www.instagram.com/yourusername/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/aditya-pratap-singh-5b6704255/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Aditya28032004" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:adityapratap28032004@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+            </div>
+
+            <div class="footer-bottom">
+                &copy; 2025 Aditya Pratap Singh | All Rights Reserved
+            </div>
+        </div>
+    </footer>
+
+    <!-- Typed.js -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Software Developer', 'Web Developer', 'Problem Solver'],
+            typeSpeed: 50,
+        });
+    </script>
+
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS.load('particles-js', 'particles.json', function() {
+            console.log('particles.js loaded');
+        });
+    </script>
+    <script>
+        window.onload = function() {
+            document.getElementById("home").scrollIntoView({ behavior: "smooth" });
+        };
+        
+        // Mobile menu toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.right ul').classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('.right ul li a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('.right ul').classList.remove('active');
+            });
+        });
+    </script>
+    
+</body>
+
+</html>
