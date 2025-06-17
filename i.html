@@ -20,6 +20,16 @@
             padding: 0;
             box-sizing: border-box;
         }
+        body {
+  background-color: #6B4226;
+}
+        
+        
+        #projects{
+           background-color: #6B4226;
+        }
+                
+        
 
         html {
             scroll-behavior: smooth;
@@ -27,8 +37,7 @@
 
         body {
             font-family: "Poppins", sans-serif;
-            font-weight: 700;
-            background-color: rgb(0, 0, 59);
+      
             color: white;
             overflow-x: hidden;
         }
@@ -51,7 +60,7 @@
             align-items: center;
             height: 80px;
             padding: 0 5%;
-            background-color: rgba(103, 116, 43, 0.244);
+          background-color: #264653;
             position: sticky;
             top: 0;
             z-index: 100;
@@ -216,7 +225,7 @@
 
         /* Footer */
         footer {
-            background-color: rgba(103, 116, 43, 0.244);
+            background-color: #264653;
             padding: 30px 20px;
             color: white;
             text-align: center;
@@ -299,7 +308,7 @@
         }
 
         .project-card {
-            background: rgba(255, 255, 255, 0.05);
+            background: #AF3E3E;
             padding: 15px;
             border-radius: 10px;
             width: 100%;
@@ -467,6 +476,93 @@
                 font-size: 1.2rem;
             }
         }
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .skill-card {
+            background: #AF3E3E;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            width: 100px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+        }
+        
+        .skill-card img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            margin-bottom: 8px;
+        }
+        
+        .skill-card p {
+            font-size: 0.9rem;
+            color: #fff;
+            font-weight: 500;
+        }
+        #contact {
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .contact-list {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            max-width: 800px;
+            margin: auto;
+        }
+        
+        .contact-card {
+            background: #AF3E3E;
+            padding: 20px;
+            border-radius: 16px;
+            text-align: center;
+            width: 140px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        
+        .contact-card img {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+            margin-bottom: 12px;
+        }
+        
+        .contact-card p {
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 500;
+            margin: 0;
+        }
+        
+        .contact-card a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        
     </style>
 </head>
 
@@ -507,22 +603,59 @@
 
         <section class="second" id="skills">
             <h1>Technical Skills</h1>
-            <div class="lan">
-                <img src="c++.jpg" alt="C++">
-                <img src="c.jpg" alt="C">
-                <img src="html.jpg" alt="HTML">
-                <img src="css.jpg" alt="CSS">
-                <img src="js.jpg" alt="JavaScript">
-                <img src="react.jpg" alt="React">
-                <img src="tailwind css.jpg" alt="Tailwind CSS">
-                <img src="git.jpg" alt="Git">
-                <img src="mongo.jpg" alt="MongoDB">
-                <img src="sql.jpg" alt="SQL">
-                <img src="python.jpg" alt="Python">
-                <img src="java.jpg" alt="Java">
+            <div class="skill-list">
+                <div class="skill-card">
+                    <img src="c++.jpg" alt="C++">
+                    <p>C++</p>
+                </div>
+                <div class="skill-card">
+                    <img src="c.jpg" alt="C">
+                    <p>C</p>
+                </div>
+                <div class="skill-card">
+                    <img src="html.jpg" alt="HTML">
+                    <p>HTML</p>
+                </div>
+                <div class="skill-card">
+                    <img src="css.jpg" alt="CSS">
+                    <p>CSS</p>
+                </div>
+                <div class="skill-card">
+                    <img src="js.jpg" alt="JavaScript">
+                    <p>JavaScript</p>
+                </div>
+                <div class="skill-card">
+                    <img src="react.jpg" alt="React">
+                    <p>React</p>
+                </div>
+                <div class="skill-card">
+                    <img src="tailwind css.jpg" alt="Tailwind CSS">
+                    <p>Tailwind</p>
+                </div>
+                <div class="skill-card">
+                    <img src="git.jpg" alt="Git">
+                    <p>Git</p>
+                </div>
+                <div class="skill-card">
+                    <img src="mongo.jpg" alt="MongoDB">
+                    <p>MongoDB</p>
+                </div>
+                <div class="skill-card">
+                    <img src="sql.jpg" alt="SQL">
+                    <p>SQL</p>
+                </div>
+                <div class="skill-card">
+                    <img src="python.jpg" alt="Python">
+                    <p>Python</p>
+                </div>
+                <div class="skill-card">
+                    <img src="java.jpg" alt="Java">
+                    <p>Java</p>
+                </div>
             </div>
         </section>
-
+        
+<hr>
         <section class="third">
             <h1>Achievements & Certifications</h1>
             <ul>
@@ -530,9 +663,10 @@
                 <li>AWS Academy Graduate - AWS Academy Cloud Foundations</li>
                 <li>Certification in DSA with C++ (Infosys Springboard)</li>
                 <li>Solved 300+ DSA problems</li>
+                
             </ul>
         </section>
-
+<hr>
         <section class="projects" id="projects">
             <h1>My Projects</h1>
             <div class="project-list">
@@ -540,7 +674,7 @@
                     <img src="chatapp.png" alt="Real-Time Chat App">
                     <h3>Real-Time Chat App</h3>
                     <p>Built with React and Firebase for real-time messaging and auth system.</p>
-                    <a href="https://github.com/Aditya28032004/RealTimeChatApp" target="_blank" class="btn">View Project</a>
+                    <a href="https://github.com/Aditya28032004/RealTimeChatApp" target="_blank" class="btn">Yet to come</a>
                 </div>
                 <div class="project-card">
                     <img src="moneytracker.png" alt="Money Tracker">
@@ -550,12 +684,30 @@
                 </div>
             </div>
         </section>
-
+<hr>
         <section class="four" id="contact">
-            <a href="https://leetcode.com/u/Adityapratapsingh00/"><img src="leetcode.jpg" alt="LeetCode"></a>
-            <a href="https://github.com/Aditya28032004"><img src="github.jpg" alt="GitHub"></a>
-            <a href="https://www.geeksforgeeks.org/user/shubhamswixs/"><img src="gfg.jpg" alt="GeeksforGeeks"></a>
+            <div class="contact-list">
+                <div class="contact-card">
+                    <a href="https://leetcode.com/u/Adityapratapsingh00/" target="_blank">
+                        <img src="leetcode.jpg" alt="LeetCode">
+                        <p>LeetCode</p>
+                    </a>
+                </div>
+                <div class="contact-card">
+                    <a href="https://github.com/Aditya28032004" target="_blank">
+                        <img src="github.jpg" alt="GitHub">
+                        <p>GitHub</p>
+                    </a>
+                </div>
+                <div class="contact-card">
+                    <a href="https://www.geeksforgeeks.org/user/shubhamswixs/" target="_blank">
+                        <img src="gfg.jpg" alt="GeeksforGeeks">
+                        <p>GeeksforGeeks</p>
+                    </a>
+                </div>
+            </div>
         </section>
+        
 
         <div class="end"></div>
     </main>
